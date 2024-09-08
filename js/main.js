@@ -488,3 +488,18 @@
     })();
 
 })(document.documentElement);
+
+function changeLanguage(lang) {
+    const content = document.getElementById('content');
+    const elements = content.querySelectorAll('[data-translate]');
+
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        element.textContent = translations[lang][key];
+    });
+}
+
+// Establece el idioma por defecto al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    changeLanguage('es'); // Puedes cambiar a 'en' si prefieres el inglés como idioma por defecto
+});
