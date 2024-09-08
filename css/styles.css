@@ -1,5 +1,8 @@
 @charset "UTF-8";
-
+.responsive-img {
+    max-width: 10; /* Hace que las imágenes se adapten al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */
+}
 /* =================================================================== 
  * Booth Main Stylesheet
  * Template Ver. 1.0.0
@@ -88,6 +91,26 @@
  * ## fonts 
  * ------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&display=swap");
+#language-selector select {
+    font-size: 12px; /* Tamaño de la fuente más pequeño */
+    padding: 3px; /* Espaciado interno reducido */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 3px; /* Bordes ligeramente redondeados */
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    width: auto; /* Ancho automático para adaptarse al contenido */
+    height: auto; /* Altura automática */
+}
+
+#language-selector {
+    margin: 5px; /* Espaciado alrededor del selector reducido */
+}
+
+
+button {
+    margin: 5px;
+}
 
 :root {
     --font-1    : "Inter", sans-serif;
@@ -3710,7 +3733,7 @@ img.u-pull-left {
 .s-about__stats h5 {
     font-family : var(--font-1);
     font-weight : 300;
-    font-size   : var(--turl(http://127.0.0.1:5500/images/screens/screen-01.png)ext-size);
+    font-size   : var(--text-size);
     line-height : var(--vspace-0_75);
     color       : var(--color-text-light);
     margin      : 0;
@@ -3735,8 +3758,6 @@ img.u-pull-left {
 /* --------------------------------------------------------------------
  * ## screens
  * -------------------------------------------------------------------- */
-
-
  .s-about__screens {
     display: flex;
     justify-content: space-between; /* Espacio entre elementos */
@@ -3751,10 +3772,19 @@ img.u-pull-left {
     width: var(--screen-width);
 }
 
-.s-about__screen img {
-    box-shadow: none; /* Asegúrate de que las imágenes no tengan sombra */
-
+.s-about__screens {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem; /* Agrega espacio entre las imágenes */
 }
+
+.s-about__screens img {
+    width: 30%; /* Ajusta el ancho de las imágenes al 30% del contenedor */
+    max-width: 100%;
+    height: auto;
+}
+
 
 
 .s-about__screen:nth-child(1) {
